@@ -24,7 +24,6 @@
         selectOnCheckboxOnly: false,
         disableSelectInfo: true,
       }"
-      theme="polar-bear"
       styleClass="vgt-table"
       :sort-options="{
         enabled: true,
