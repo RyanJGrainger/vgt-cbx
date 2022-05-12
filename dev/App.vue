@@ -35,10 +35,7 @@
         skipDiacritics: true,
       }">
     </vue-good-table>
-    <h3>Remote Table</h3>
-    <remote-table/>
-    <h3>Grouped Table</h3>
-     <grouped-table></grouped-table>
+   
   </div>
 </template>
 
@@ -57,25 +54,38 @@ export default {
       paginationOptions: {
         enabled: true,
         mode: 'records',
-        perPage: 3,
+        perPage: 20,
         perPageDropdown: [3, 5, 10, 200, 300, 500, 1000],
         perPageDropdownEnabled: true,
         jumpFirstOrLast: true,
         // infoFn: (params) => `alala ${params.firstRecordOnPage} to ${params.lastRecordOnPage} of ${params.totalRecords}`,
       },
       columns: [
-        {
-          label: 'Name',
+          {
+          label: 'Multiselect',
           field: 'name',
-          width: '200px',
           filterOptions: {
             enabled: true,
-            placeholder: 'All',
-            trigger: 'enter',
-            // filterDropdownItems: ['Chris', 'Dan', 'Susan'],
-            // filterValue: 'Chris',
+            filterMultiselectDropdownItems: [
+              'Chris',
+              'Dan',
+              'Susan',
+              'John',
+              'Angel'
+            ],
           },
         },
+        // {
+        //   label: 'Name',
+        //   field: 'name',
+        //   width: '200px',
+        //   filterOptions: {
+        //     enabled: true,
+        //     placeholder: 'All',
+        //     trigger: 'enter',
+        //     filterDropdownItems: ['Chris', 'Dan', 'Susan'],
+        //   },
+        // },
         {
           label: 'Age',
           field: 'age',
@@ -84,19 +94,7 @@ export default {
           firstSortType: 'desc',
           filterOptions: {
             enabled: true,
-            // filterDropdownItems: ['24', '16', '30'],
-            styleClass: 'class1',
-            trigger: 'enter',
-            // filterDropdownItems: [
-            //   {
-            //     value: 24,
-            //     text: '24',
-            //   },
-            //   {
-            //     value: 16,
-            //     text: '16',
-            //   },
-            // ],
+            filterMultiselectDropdownItems: ['24', '16', '30'],
           },
         },
         {
@@ -123,10 +121,9 @@ export default {
         {
           label: 'Valid',
           field: this.fieldValid,
-          type: 'boolean',
           filterOptions: {
             enabled: true,
-            filterDropdownItems: [
+            filterMultiselectDropdownItems: [
               true,
               false,
             ],
