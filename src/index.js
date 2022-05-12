@@ -1,5 +1,5 @@
 import VueGoodTable from './components/Table.vue';
-import vSelect from "vue-select";
+import vSelect from "../../node_modules/vue-select";
 
 
 const VueGoodTablePlugin = {
